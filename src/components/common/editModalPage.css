@@ -1,0 +1,61 @@
+
+.modal {
+  flex-direction: column;
+  max-height: 75.75rem !important;
+  background-color: grey;
+  border-radius: 3rem !important;
+  margin: auto !important;
+  margin-top: 5rem !important;
+  width: 41% !important;
+  margin-right: auto !important;
+  margin-bottom: auto !important;
+  margin-left: auto !important;
+}
+
+.titleName{
+    text-align: center;
+    color: black;
+    margin-top: 3rem !important;
+    font-size: 1.5rem !important;
+    text-shadow: none;
+
+}
+
+.image{
+  color: white !important;
+  background-color: rgba(5, 0, 94, 0.3) !important;
+  position: relative !important;
+  bottom: 5rem !important;
+  margin-right: 0rem !important;
+  background-color: green;
+  width: 40px !important;
+  height: auto !important;
+  font-size: .85714286rem !important;
+  float: right !important;
+  margin-top: 0.8rem !important;
+  margin-right: 0.5rem !important;
+}
+.editListBtn{
+  margin-top: 1rem !important;
+  background-color: red;
+}
+.textStyle{
+  color: red;
+}
+
+.headerStyle{
+  border-bottom: none !important;
+  max-height: 7rem !important;
+  color: black;
+  background-color: red;
+}
+
+.modalDown{
+ text-align: center !important;
+ border-top: none !important;
+} 
+
+.errorMessageAddNote{
+color: red;
+font-size: 0.8rem;
+}

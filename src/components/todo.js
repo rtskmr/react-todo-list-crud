@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { addToDoListAction } from '../actions/todoListAction';
 import { connect } from 'react-redux';
+import EditModalPage from './common/editModalPage';
 
 import '../css/todo.css';
 
@@ -10,7 +11,8 @@ class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todoList: ''
+      todoList: '',
+      isEditModalOpen: false
     };
   }
 
@@ -25,15 +27,21 @@ class Todo extends Component {
       'todoList': e.target.value
     })
   }
+  openEditModal = () => {
+    this.setState({isEditModalOpen:true});
+  }
+
+  closeNote = () => {
+    this.setState({isEditModalOpen: false});
+  }
   render() {
-    // console.log(this.props.addToDoListItem);
     let abc = [];
     let totalData = this.props.addToDoListItem;
     {
       totalData.map((item, i) =>
         abc.push(
           <div key={i} className="mainDiv">
-            {i + 1} - {item} <button>Edit</button><button>Delete</button>
+           <div> {i + 1} - {item} </div><div><button onClick = {this.openEditModal}>Edit</button><button>Delete</button></div>
           </div>
         )
       )
@@ -47,7 +55,9 @@ class Todo extends Component {
           </div>
         </div>
         <div className="addedListSection">{abc}</div>
-
+        <div>
+            {this.state.isEditModalOpen && <EditModalPage isEditModalOpen={this.state.isEditModalOpen} closeModal={this.closeNote}/>}
+          </div>
       </div>
     );
   }
